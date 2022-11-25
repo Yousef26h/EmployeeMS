@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5431/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQL81Dialect
+    show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+com:
+  employee:
+    errors:
+      exception-messages:
+        EmployeeNotFoundException:
+          code: 1001
+          status-code: 404
+          message:
+            ar: المستخدم غير موجود
+            en: User not found
